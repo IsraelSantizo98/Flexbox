@@ -2,9 +2,15 @@
   margin: 0;
   padding: 0;
 }
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .container {
-  width: 500px;
-  height: 200px;
+  max-width: 1000px;
+  /* height: 200px; */
   padding: 10px;
   border: 1px solid black;
   display: flex;
@@ -13,11 +19,35 @@
 
   flex-flow: row wrap; */
   flex-flow: row wrap;
-  justify-content: space-around;
+  /*Alinea el contenido horizontalmente*/
+  justify-content: center;
+  /*Alinea el contenido verticalmente*/
+  /*La propiedad stretch funciona si en los elementos hijos no se tiene un height definido*/
+  /*La propiedad baseline alinea conforme el texto, aunque un elementos sea mas grande que el otro ese se alinea donde inicia el texto*/
+  /* align-items: center; */
+  /*Se usa cuando se tiene varias filas de elementos, esto hace que si es center no exista un espacio entre las filas*/
+  /* align-content: center; */
 }
 .item {
   margin: 5px;
-  width: 50px;
-  height: 50px;
-  border: 1px solid red;
+  height: 150px;
+  text-align: center;
+  /*flex-basis si tenemos el layout en row es igual al width y si lo tenemos en columnas es igual al height*/
+  /*Flex grow quiere decir que los elementos van a crecer mas tomando todo el ancho que se tenga*/
+  /*Flex shrink es la proporcion de cuanto se va a encoger un elementos respecto a los demas, si es un 4 se encoje 4 veces mas que los demas*/
+  /* flex-grow: 1;
+  flex-shrink: 4;
+  flex-basis: 300px; */
+  /*La propiedad flex es un shortcut que contiene grow, shrink y basis*/
+  flex: 1 1 300px;
+  order: 2;
+}
+.item:nth-child(4) {
+  /*Order sirve para indicar que elemento va primero aunque en el DOM no este en ese lugar, recordar que los demas elementos tiene que tener un order o de lo contrario se va hasta el final*/
+  order: 1;
+  align-self: flex-end;
+}
+.item img {
+  width: 100%;
+  height: 100%;
 }
