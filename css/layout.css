@@ -131,3 +131,36 @@ footer .social a{
     /*Se coloca este display porque no es necesario flex y este realiza el cometido*/
     display: inline-block;
 }
+@media screen and (max-width: 768px){
+    .contenedor{
+        flex-direction: column;
+    }
+    header{
+        flex-direction: column;
+        padding: 0;
+    }
+    header .logo{
+        margin: 20px 0;
+    }
+    header nav{
+        width: 100%;
+    }
+    aside{
+        flex-direction: row;
+        flex: 0;
+    }
+    aside .widget{
+        flex-grow: 1;
+    }
+}
+@media screen and (max-width: 420px){
+    aside{
+        flex-direction: column;
+    }
+    footer{
+        justify-content: space-around;
+    }
+    footer .links{
+        margin: 0 0 10px 0;
+    }
+}
