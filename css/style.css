@@ -49,14 +49,38 @@ h1{
   flex-basis: 300px; */
   /*La propiedad flex es un shortcut que contiene grow, shrink y basis*/
   flex: 1 1 300px;
-  order: 2;
+  /*order: 2;*/
 }
 .item:nth-child(4) {
   /*Order sirve para indicar que elemento va primero aunque en el DOM no este en ese lugar, recordar que los demas elementos tiene que tener un order o de lo contrario se va hasta el final*/
-  order: 1;
-  align-self: flex-end;
+  /*order: 1;*/
 }
 .item img {
   width: 100%;
   height: 100%;
+}
+.container-button{
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.button{
+  margin: .8rem 0 0 0;
+  padding: .8rem;
+  display: flex;
+  background-color: lightgreen;
+}
+.button a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000;
+}
+@media screen and (max-width: 768px){
+  body{
+    background-color: blue;
+  }
+  .button{
+
+  }
 }
